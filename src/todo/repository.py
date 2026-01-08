@@ -22,3 +22,10 @@ class TaskRepository:
                 return True
         return False
 
+    def toggle_complete(self, task_id: int):
+        for task in self.tasks:
+            if task.id == task_id:
+                task.completed = not task.completed
+                return task
+        return None
+

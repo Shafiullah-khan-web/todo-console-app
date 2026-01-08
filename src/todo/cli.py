@@ -25,3 +25,11 @@ class TodoCLI:
         except ValueError as e:
             print(e)
 
+    def complete(self, task_id: int):
+        try:
+            task = self.service.toggle_complete(task_id)
+            status = "complete" if task.completed else "incomplete"
+            print(f"Task {task_id} marked as {status}")
+        except ValueError as e:
+            print(e)
+

@@ -11,3 +11,9 @@ class TaskService:
         if not self.repo.delete_task(task_id):
             raise ValueError("Task not found")
 
+    def toggle_complete(self, task_id: int):
+        task = self.repo.toggle_complete(task_id)
+        if not task:
+            raise ValueError("Task not found")
+        return task
+

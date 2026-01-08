@@ -29,3 +29,10 @@ if __name__ == "__main__":
             else:
                 cli.delete(int(parts[1]))
 
+        elif command.startswith("complete"):
+            parts = command.split()
+            if len(parts) != 2:
+                print("Usage: complete <id>")
+            else:
+                cli.complete(int(parts[1]))
+

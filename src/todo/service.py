@@ -17,3 +17,9 @@ class TaskService:
             raise ValueError("Task not found")
         return task
 
+    def update_task(self, task_id: int, title: str, description: str):
+        task = self.repo.update_task(task_id, title, description)
+        if not task:
+            raise ValueError("Task not found")
+        return task
+

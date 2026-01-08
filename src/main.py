@@ -36,3 +36,10 @@ if __name__ == "__main__":
             else:
                 cli.complete(int(parts[1]))
 
+        elif command.startswith("update"):
+            parts = command.split()
+            if len(parts) != 2:
+                print("Usage: update <id>")
+            else:
+                cli.update(int(parts[1]))
+

@@ -33,3 +33,12 @@ class TodoCLI:
         except ValueError as e:
             print(e)
 
+    def update(self, task_id: int):
+        title = input("New title: ")
+        description = input("New description: ")
+        try:
+            self.service.update_task(task_id, title, description)
+            print(f"Task {task_id} updated")
+        except ValueError as e:
+            print(e)
+

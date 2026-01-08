@@ -18,3 +18,10 @@ class TodoCLI:
             status = "✓" if task.completed else " "
             print(f"[{status}] {task.id}. {task.title}")
 
+    def delete(self, task_id: int):
+        try:
+            self.service.delete_task(task_id)
+            print(f"Task {task_id} deleted successfully")
+        except ValueError as e:
+            print(e)
+

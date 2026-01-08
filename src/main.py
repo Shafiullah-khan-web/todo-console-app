@@ -22,3 +22,10 @@ def main():
 if __name__ == "__main__":
     main()
 
+        elif command.startswith("delete"):
+            parts = command.split()
+            if len(parts) != 2:
+                print("Usage: delete <id>")
+            else:
+                cli.delete(int(parts[1]))
+
